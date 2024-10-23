@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketExpress - Tu entrada al mundo del entretenimiento</title>
+    <link rel="icon" href="images/loguito.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-bar-content container">
+            <div class="content-info">
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    ticketexpress_pe@gmail.com
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="menu container">
+            <div class="top-row">
+                <div class="logo-container">
+                    <img class="logo-1" src="images/logo.png" alt="" usemap="#mlogo">
+                    <img class="logo-2" src="images/logo.png" alt="" usemap="#mlogo">
+                    <map name="mlogo">
+                        <area alt="Logotipo" title="TicketExpress" shape="rect" coords="0,0,150,60" href="index.html">
+                    </map>
+                </div>
+            </div>
+
+            <input type="checkbox" id="search-toggle" />
+            <label for="search-toggle">
+                <img src="images/lupa.png" class="search-icon" alt="Buscar"></label>
+            <div class="search-bar">
+                <form id="search-form" action="resultados_busqueda.php" method="GET">
+                    <select id="category-filter" name="category" class="search-filters">
+                        <option value="">Categoria</option>
+                        <option value="concierto">Concierto</option>
+                        <option value="teatro">Teatro</option>
+                        <option value="deportes">Deportes</option>
+                        <option value="entretenimiento">Entretenimiento</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                    <select id="city-filter" name="city" class="search-filters">
+                        <option value="">Ciudad</option>
+                        <option value="lima">Lima</option>
+                        <option value="arequipa">Arequipa</option>
+                        <option value="piura">Piura</option>
+                    </select>
+                    <button class="btn-3" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const searchButton = document.getElementById("search-button");
+                    searchButton.addEventListener("click", function () {
+                        const category = document.getElementById("category-filter").value;
+                        const city = document.getElementById("city-filter").value;
+
+                        const queryParams = new URLSearchParams();
+                        if (category) queryParams.set("category", category);
+                        if (city) queryParams.set("city", city);
+
+                        const queryString = queryParams.toString();
+                        window.location.href = "resultados_busqueda.php?" + queryString;
+                    });
+                });
+            </script>
+
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="images/menu.png" class="menu-icono" alt="">" </label>
+            <nav class="navbar">
+                <div class="menu-1">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="redes sociales.html">Redes Sociales</a></li>
+                        <li><a href="mapas.html">Mapas</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="contacto.html">Mis entradas</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="redes">
+        <div class="redes-info container">
+            <div class="info-txt">
+                <h2>Nuestras Redes</h2>
+                <p>
+                    En TicketExpress, nos encanta interactuar con nuestros seguidores y mantenerte al tanto de las
+                    últimas
+                    novedades, promociones exclusivas y eventos especiales. Síguenos en nuestras plataformas para
+                    acceder a
+                    contenido exclusivo, participar en concursos, conocer a otros entusiastas del entretenimiento y
+                    mucho
+                    más. Estamos activos en diversas redes, así que elige tu favorita y únete a la conversación.
+                </p>
+            </div>
+            <iframe width="640" height="385" src="https://www.youtube.com/embed/cXeKoCPCEV0?si=2M_5Dh6F0YS0LOF-"
+                frameborder="0" allow="accelerometer;
+                                        autoplay;
+                                        clipboard-write;
+                                        encrypted-media;
+                                        gyroscope;
+                                        picture-inpicture" allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <main class="tiktok">
+        <div>Redes Sociales</div>
+        <div class="Carrusel">
+            <div class="elemento">
+                <blockquote class="tiktok-embed"
+                    cite="https://www.tiktok.com/@lavozdelhincha.pee/video/7420190995687410990"
+                    data-video-id="7420190995687410990" style="max-width: 605px;min-width: 325px;">
+                    <section> <a target="_blank" title="@lavozdelhincha.pee"
+                            href="https://www.tiktok.com/@lavozdelhincha.pee?refer=embed">@lavozdelhincha.pee</a>
+                        Universitario de Deportes superó 2-0 a Comerciantes Unidos con goles de Calcaterra y Flores, se
+                        posiciona como único puntero. <a title="universitariodedeportes" target="_blank"
+                            href="https://www.tiktok.com/tag/universitariodedeportes?refer=embed">#universitariodedeportes</a>
+                        <a title="liga1" target="_blank" href="https://www.tiktok.com/tag/liga1?refer=embed">#liga1</a>
+                        <a title="ytb" target="_blank" href="https://www.tiktok.com/tag/ytb?refer=embed">#ytb</a> <a
+                            title="typ" target="_blank" href="https://www.tiktok.com/tag/typ?refer=embed">#typ</a> <a
+                            title="parati" target="_blank"
+                            href="https://www.tiktok.com/tag/parati?refer=embed">#parati</a> <a title="viral"
+                            target="_blank" href="https://www.tiktok.com/tag/viral?refer=embed">#viral</a> <a
+                            target="_blank" title="♬ sonido original - lavozdelhincha.pee"
+                            href="https://www.tiktok.com/music/sonido-original-7420190993753836331?refer=embed">♬ sonido
+                            original - lavozdelhincha.pee</a>
+                    </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            <div class="elemento">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@chocolaterost/video/7396218640023948549"
+                    data-video-id="7396218640023948549" style="max-width: 605px;min-width: 325px;">
+                    <section> <a target="_blank" title="@chocolaterost"
+                            href="https://www.tiktok.com/@chocolaterost?refer=embed">@chocolaterost</a> La alegría de
+                        los fanáticos de Universitario tras ganarle en el clásico a Alianza Lima.🔥⚽️ <a
+                            title="universitariodedeportes" target="_blank"
+                            href="https://www.tiktok.com/tag/universitariodedeportes?refer=embed">#universitariodedeportes</a>
+                        <a title="alianzalima" target="_blank"
+                            href="https://www.tiktok.com/tag/alianzalima?refer=embed">#alianzalima</a> <a
+                            title="clasicoperuano" target="_blank"
+                            href="https://www.tiktok.com/tag/clasicoperuano?refer=embed">#clasicoperuano</a> <a
+                            target="_blank" title="♬ sonido original - chocolaterost"
+                            href="https://www.tiktok.com/music/sonido-original-7396218634269494021?refer=embed">♬ sonido
+                            original - chocolaterost</a>
+                    </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            <div class="elemento">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@liberoperu/video/7417302232015604998"
+                    data-video-id="7417302232015604998" style="max-width: 605px;min-width: 325px;">
+                    <section> <a target="_blank" title="@liberoperu"
+                            href="https://www.tiktok.com/@liberoperu?refer=embed">@liberoperu</a> <a title="alianzalima"
+                            target="_blank" href="https://www.tiktok.com/tag/alianzalima?refer=embed">#AlianzaLima</a>
+                        EL DEPREDADOR Y SU GOL CON EL CLUB DE SUS AMORES🔵⚽️ <a title="paologuerrero" target="_blank"
+                            href="https://www.tiktok.com/tag/paologuerrero?refer=embed">#paologuerrero</a> <a
+                            title="liga1" target="_blank" href="https://www.tiktok.com/tag/liga1?refer=embed">#liga1</a>
+                        <a title="futbol" target="_blank"
+                            href="https://www.tiktok.com/tag/futbol?refer=embed">#futbol</a> <a title="alianzalima"
+                            target="_blank" href="https://www.tiktok.com/tag/alianzalima?refer=embed">#alianzalima</a>
+                        <a title="alianza" target="_blank"
+                            href="https://www.tiktok.com/tag/alianza?refer=embed">#alianza</a> <a title="futbolperuano"
+                            target="_blank"
+                            href="https://www.tiktok.com/tag/futbolperuano?refer=embed">#futbolperuano</a> <a
+                            title="blanquiazul" target="_blank"
+                            href="https://www.tiktok.com/tag/blanquiazul?refer=embed">#blanquiazul</a> <a
+                            target="_blank" title="♬ sonido original - Libero.pe"
+                            href="https://www.tiktok.com/music/sonido-original-7417302257760275206?refer=embed">♬ sonido
+                            original - Libero.pe</a>
+                    </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            <div class="elemento">
+                <blockquote class="tiktok-embed"
+                    cite="https://www.tiktok.com/@__barriletecosmico/video/7414875894893923590"
+                    data-video-id="7414875894893923590" style="max-width: 605px;min-width: 325px;">
+                    <section> <a target="blank" title="@_barriletecosmico"
+                            href="https://www.tiktok.com/@__barriletecosmico?refer=embed">@__barriletecosmico</a>
+                        Hinchas de <a title="alianzalima" target="_blank"
+                            href="https://www.tiktok.com/tag/alianzalima?refer=embed">#alianzalima</a> opinan del debut
+                        de <a title="paologuerrero" target="_blank"
+                            href="https://www.tiktok.com/tag/paologuerrero?refer=embed">#paologuerrero</a> . . . <a
+                            title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a
+                            title="liga1" target="_blank" href="https://www.tiktok.com/tag/liga1?refer=embed">#liga1</a>
+                        <a title="liga1betsson" target="_blank"
+                            href="https://www.tiktok.com/tag/liga1betsson?refer=embed">#liga1betsson</a><a
+                            title="foryoupageoffical" target="_blank"
+                            href="https://www.tiktok.com/tag/foryoupageoffical?refer=embed">#foryoupageoffical</a> <a
+                            title="foryou" target="_blank"
+                            href="https://www.tiktok.com/tag/foryou?refer=embed">#foryou</a> <a title="alianza"
+                            target="_blank" href="https://www.tiktok.com/tag/alianza?refer=embed">#alianza</a> <a
+                            title="paologuerrerof9" target="_blank"
+                            href="https://www.tiktok.com/tag/paologuerrerof9?refer=embed">#paologuerrerof9</a> <a
+                            title="parati" target="_blank"
+                            href="https://www.tiktok.com/tag/parati?refer=embed">#parati</a> <a
+                            title="paratiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" target="_blank"
+                            href="https://www.tiktok.com/tag/paratiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii?refer=embed">#paratiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</a>
+                        <a target="_blank" title="♬ sonido original  - Barrilete Cósmico"
+                            href="https://www.tiktok.com/music/sonido-original-Barrilete-Cósmico-7414875953740516102?refer=embed">♬
+                            sonido original - Barrilete Cósmico</a>
+                    </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            <div class="elemento">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@toqueymevoy/video/7420175754551414022"
+                    data-video-id="7420175754551414022" style="max-width: 605px;min-width: 325px;">
+                    <section> <a target="_blank" title="@toqueymevoy"
+                            href="https://www.tiktok.com/@toqueymevoy?refer=embed">@toqueymevoy</a> GOLAZO DE CALCATERA
+                        🔥🔥en las alturas de Cajabamba, ya esta ganando Universitario de Deportes vs Comerciantes
+                        Unidos. <a title="universitariodedeportes" target="_blank"
+                            href="https://www.tiktok.com/tag/universitariodedeportes?refer=embed">#universitariodedeportes</a>
+                        <a title="uvscomerciantes" target="_blank"
+                            href="https://www.tiktok.com/tag/uvscomerciantes?refer=embed">#uvscomerciantes</a> <a
+                            title="golazo" target="_blank"
+                            href="https://www.tiktok.com/tag/golazo?refer=embed">#golazo</a> <a title="gol"
+                            target="_blank" href="https://www.tiktok.com/tag/gol?refer=embed">#gol</a> <a title="goal"
+                            target="_blank" href="https://www.tiktok.com/tag/goal?refer=embed">#goal</a> <a title="fyp"
+                            target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a title="viral"
+                            target="_blank" href="https://www.tiktok.com/tag/viral?refer=embed">#viral</a> <a
+                            title="centenario" target="_blank"
+                            href="https://www.tiktok.com/tag/centenario?refer=embed">#centenario</a> <a title="liga1max"
+                            target="_blank" href="https://www.tiktok.com/tag/liga1max?refer=embed">#liga1max</a> <a
+                            title="calcaterra" target="_blank"
+                            href="https://www.tiktok.com/tag/calcaterra?refer=embed">#calcaterra</a> <a
+                            title="futbolperuano" target="_blank"
+                            href="https://www.tiktok.com/tag/futbolperuano?refer=embed">#futbolperuano</a> <a
+                            title="centenariocrema" target="_blank"
+                            href="https://www.tiktok.com/tag/centenariocrema?refer=embed">#centenariocrema</a> <a
+                            title="futbolperuano" target="_blank"
+                            href="https://www.tiktok.com/tag/futbolperuano?refer=embed">#futbolperuano</a> <a
+                            title="ligaperuana" target="_blank"
+                            href="https://www.tiktok.com/tag/ligaperuana?refer=embed">#ligaperuana</a> <a
+                            target="_blank" title="♬ sonido original - Toque y me voy"
+                            href="https://www.tiktok.com/music/sonido-original-7420175779020327686?refer=embed">♬ sonido
+                            original - Toque y me voy</a>
+                    </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            <div class="elemento">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@laligafacha1/video/7420145668141960453"
+                    data-video-id="7420145668141960453" style="max-width: 605px;min-width: 325px;">
+                    <section> <a target="_blank" title="@laligafacha1"
+                            href="https://www.tiktok.com/@laligafacha1?refer=embed">@laligafacha1</a> Adiós limitado
+                        🥶🫡🗣️<a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a>
+                        <a title="parati" target="_blank"
+                            href="https://www.tiktok.com/tag/parati?refer=embed">#parati</a> <a title="sportingcristal"
+                            target="_blank"
+                            href="https://www.tiktok.com/tag/sportingcristal?refer=embed">#sportingcristal</a> <a
+                            title="fuerzacristal" target="_blank"
+                            href="https://www.tiktok.com/tag/fuerzacristal?refer=embed">#fuerzacristal</a> <a
+                            title="laligafacha1" target="_blank"
+                            href="https://www.tiktok.com/tag/laligafacha1?refer=embed">#laligafacha1</a> <a title="💙"
+                            target="_blank" href="https://www.tiktok.com/tag/%F0%9F%92%99?refer=embed">#💙</a> <a
+                            title="estadioalbertogallardo" target="_blank"
+                            href="https://www.tiktok.com/tag/estadioalbertogallardo?refer=embed">#estadioalbertogallardo</a>
+                        <a title="victoria" target="_blank"
+                            href="https://www.tiktok.com/tag/victoria?refer=embed">#victoria</a> <a
+                            title="estadioalbertogallardo" target="_blank"
+                            href="https://www.tiktok.com/tag/estadioalbertogallardo?refer=embed">#estadioalbertogallardo</a>
+                        <a title="ucv" target="_blank" href="https://www.tiktok.com/tag/ucv?refer=embed">#ucv</a> <a
+                            title="trujillo" target="_blank"
+                            href="https://www.tiktok.com/tag/trujillo?refer=embed">#trujillo</a> <a title="descenso"
+                            target="_blank" href="https://www.tiktok.com/tag/descenso?refer=embed">#descenso</a> <a
+                            title="🥶" target="_blank"
+                            href="https://www.tiktok.com/tag/%F0%9F%A5%B6?refer=embed">#🥶</a> <a title="johanmadrid"
+                            target="_blank" href="https://www.tiktok.com/tag/johanmadrid?refer=embed">#johanmadrid</a>
+                        <a title="viral" target="_blank" href="https://www.tiktok.com/tag/viral?refer=embed">#viral</a>
+                        <a target="_blank" title="♬ sonido original - Laligafacha1"
+                            href="https://www.tiktok.com/music/sonido-original-7420145690481134342?refer=embed">♬ sonido
+                            original - Laligafacha1</a> </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+        </div>
+    </main>
+
+    <section class="barra">
+        <div class="barra-redes container">
+            <h2>Síguenos en todas nuestras redes :D</h2>
+            <div class="icons">
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer container">
+
+        <img class="logo-2" src="images/logo.png" alt="" usemap="#mlogo">
+        <map name="mlogo">
+            <area alt="Logotipo" title="TicketExpress" shape="rect" coords="0,0,150,60" href="index.html">
+        </map>
+        <div class="links">
+            <h4>SOBRE TICKETEXPRESS</h4>
+            <ul>
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>TRABAJA CON NOSOTROS</h4>
+            <ul>
+                <li><a href="#">¿Tienes un evento?</a></li>
+                <li><a href="#">Venta empresas</a></li>
+                <li><a href="#">Módulo promotores</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>Atención al cliente</h4>
+            <ul>
+                <li><a href="#">Ver mi boleta electrónica</a></li>
+                <li><a href="#">Libro de Reclamaciones</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>Nuestras Redes</h4>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61558688744849">
+                    <div class="social">
+                        <img src="images/s1.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://x.com/TicketExpressPE?t=FArUkvPdEQj8dYOMpau5Pg&s=09">
+                    <div class="social">
+                        <img src="images/s2.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/ticketexpress_pe?igsh=NGMwaW9lYzRuaDdz">
+                    <div class="social">
+                        <img src="images/s3.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+
+</body>
+
+</html>

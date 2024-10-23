@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketExpress - Tu entrada al mundo del entretenimiento</title>
+    <link rel="icon" href="images/loguito.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-bar-content container">
+            <div class="content-info">
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    ticketexpress_pe@gmail.com
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="menu container">
+            <div class="top-row">
+                <div class="logo-container">
+                    <img class="logo-1" src="images/logo.png" alt="" usemap="#mlogo">
+                    <img class="logo-2" src="images/logo.png" alt="" usemap="#mlogo">
+                    <map name="mlogo">
+                        <area alt="Logotipo" title="TicketExpress" shape="rect" coords="0,0,150,60" href="index.html">
+                    </map>
+                </div>
+            </div>
+
+            <input type="checkbox" id="search-toggle" />
+            <label for="search-toggle">
+                <img src="images/lupa.png" class="search-icon" alt="Buscar"></label>
+            <div class="search-bar">
+                <form id="search-form" action="resultados_busqueda.php" method="GET">
+                    <select id="category-filter" name="category" class="search-filters">
+                        <option value="">Categoria</option>
+                        <option value="concierto">Concierto</option>
+                        <option value="teatro">Teatro</option>
+                        <option value="deportes">Deportes</option>
+                        <option value="entretenimiento">Entretenimiento</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                    <select id="city-filter" name="city" class="search-filters">
+                        <option value="">Ciudad</option>
+                        <option value="lima">Lima</option>
+                        <option value="arequipa">Arequipa</option>
+                        <option value="piura">Piura</option>
+                    </select>
+                    <button class="btn-3" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const searchButton = document.getElementById("search-button");
+                    searchButton.addEventListener("click", function () {
+                        const category = document.getElementById("category-filter").value;
+                        const city = document.getElementById("city-filter").value;
+
+                        const queryParams = new URLSearchParams();
+                        if (category) queryParams.set("category", category);
+                        if (city) queryParams.set("city", city);
+
+                        const queryString = queryParams.toString();
+                        window.location.href = "resultados_busqueda.php?" + queryString;
+                    });
+                });
+            </script>
+
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="images/menu.png" class="menu-icono" alt="">" </label>
+            <nav class="navbar">
+                <div class="menu-1">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="redes sociales.html">Redes Sociales</a></li>
+                        <li><a href="mapas.html">Mapas</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="contacto.html">Mis entradas</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="nosotros">
+        <div class="nosotros-content container">
+            <div class="swiper mySwiper-1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider-2">
+                            <div class="slider-txt-2">
+                                <h1>Nosotros</h1>
+                                <p>
+                                    Somos una plataforma dedicada a conectar a los fanáticos del con los mejores
+                                    eventos futbolísticos. Ofrecemos una experiencia rápida, segura y confiable para la
+                                    compra de boletos, garantizando que puedas disfrutar de los partidos de tus equipos
+                                    favoritos sin complicaciones. Con acceso a las ligas más importantes y competiciones
+                                    internacionales, nos esforzamos por brindar la mayor variedad de opciones para que
+                                    vivas la emoción del fútbol en primera fila.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slider-2">
+                            <div class="slider-txt-2">
+                                <h1>Misión</h1>
+                                <p>
+                                    Nuestra misión es ofrecer una plataforma accesible y confiable para la compra de
+                                    boletos de fútbol, brindando una experiencia fluida, segura y personalizada.
+                                    Buscamos ser el enlace perfecto entre los aficionados y el deporte que los apasiona,
+                                    garantizando la mejor selección de eventos, precios competitivos y un servicio de
+                                    atención al cliente de alta calidad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slider-2">
+                            <div class="slider-txt-2">
+                                <h1>Visión</h1>
+                                <p>
+                                    Aspiramos a ser la plataforma líder en la venta de boletos de fútbol en
+                                    Latinoamérica, reconocida por la confianza, innovación y cercanía con nuestros
+                                    usuarios. Queremos ser la primera opción para los fanáticos del deporte, ayudando a
+                                    crear experiencias inolvidables y fomentando la pasión por el fútbol en cada rincón
+                                    del mundo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="barra2">
+        <div class="barra-nosotros container">
+            <div class="nosotros-card">
+                <i class="fa-solid fa-futbol"></i>
+                <h2>Pasión por el deporte</h2>
+            </div>
+            <div class="nosotros-card">
+                <i class="fa-solid fa-ticket"></i>
+                <h2>Reserva segura y rápida</h2>
+            </div>
+            <div class="nosotros-card">
+                <i class="fa-solid fa-tags"></i>
+                <h2>Descuentos y promociones</h2>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer container">
+
+        <img class="logo-2" src="images/logo.png" alt="" usemap="#mlogo">
+        <map name="mlogo">
+            <area alt="Logotipo" title="TicketExpress" shape="rect" coords="0,0,150,60" href="index.html">
+        </map>
+        <div class="links">
+            <h4>SOBRE TICKETEXPRESS</h4>
+            <ul>
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>TRABAJA CON NOSOTROS</h4>
+            <ul>
+                <li><a href="#">¿Tienes un evento?</a></li>
+                <li><a href="#">Venta empresas</a></li>
+                <li><a href="#">Módulo promotores</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>Atención al cliente</h4>
+            <ul>
+                <li><a href="#">Ver mi boleta electrónica</a></li>
+                <li><a href="#">Libro de Reclamaciones</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>Nuestras Redes</h4>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61558688744849">
+                    <div class="social">
+                        <img src="images/s1.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://x.com/TicketExpressPE?t=FArUkvPdEQj8dYOMpau5Pg&s=09">
+                    <div class="social">
+                        <img src="images/s2.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/ticketexpress_pe?igsh=NGMwaW9lYzRuaDdz">
+                    <div class="social">
+                        <img src="images/s3.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>

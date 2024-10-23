@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketExpress - Tu entrada al mundo del entretenimiento</title>
+    <link rel="icon" href="images/loguito.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-bar-content container">
+            <div class="content-info">
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    ticketexpress_pe@gmail.com
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="menu container">
+            <div class="top-row">
+                <div class="logo-container">
+                    <img class="logo-1" src="images/logo.png" alt="" usemap="#mlogo">
+                    <img class="logo-2" src="images/logo.png" alt="" usemap="#mlogo">
+                    <map name="mlogo">
+                        <area alt="Logotipo" title="TicketExpress" shape="rect" coords="0,0,150,60" href="index.html">
+                    </map>
+                </div>
+            </div>
+
+            <input type="checkbox" id="search-toggle" />
+            <label for="search-toggle">
+                <img src="images/lupa.png" class="search-icon" alt="Buscar"></label>
+            <div class="search-bar">
+                <form id="search-form" action="resultados_busqueda.php" method="GET">
+                    <select id="category-filter" name="category" class="search-filters">
+                        <option value="">Categoria</option>
+                        <option value="concierto">Concierto</option>
+                        <option value="teatro">Teatro</option>
+                        <option value="deportes">Deportes</option>
+                        <option value="entretenimiento">Entretenimiento</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                    <select id="city-filter" name="city" class="search-filters">
+                        <option value="">Ciudad</option>
+                        <option value="lima">Lima</option>
+                        <option value="arequipa">Arequipa</option>
+                        <option value="piura">Piura</option>
+                    </select>
+                    <button class="btn-3" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const searchButton = document.getElementById("search-button");
+                    searchButton.addEventListener("click", function () {
+                        const category = document.getElementById("category-filter").value;
+                        const city = document.getElementById("city-filter").value;
+
+                        const queryParams = new URLSearchParams();
+                        if (category) queryParams.set("category", category);
+                        if (city) queryParams.set("city", city);
+
+                        const queryString = queryParams.toString();
+                        window.location.href = "resultados_busqueda.php?" + queryString;
+                    });
+                });
+            </script>
+
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="images/menu.png" class="menu-icono" alt="">" </label>
+            <nav class="navbar">
+                <div class="menu-1">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="redes sociales.html">Redes Sociales</a></li>
+                        <li><a href="mapas.html">Mapas</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="contacto.html">Mis entradas</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="mapas">
+            <div class="mapas-info container">
+                <h2>Nuestras Sedes</h2>
+                <div class="mapas-txt">
+                    <aside>
+                        <div class="CLHip">
+                            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1951.7685443128837!2d-77.06652396446485!3d-11.937269739871875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d19a13fa473d%3A0xf854f91375b6055c!2sMallplaza%20Comas!5e0!3m2!1ses-419!2spe!4v1714372634792!5m2!1ses-419!2spe"
+                                target="IFramePrin" onclick="showInfo(1)">Comas</a>
+                        </div>
+                        <div class="CLHip">
+                            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.5369700814745!2d-77.0627520248601!3d-12.00650794115273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce300d8854e1%3A0x6a1b58f36fcc79a6!2sPlaza%20Norte!5e0!3m2!1ses-419!2spe!4v1714372708155!5m2!1ses-419!2spe"
+                                target="IFramePrin" onclick="showInfo(2)">San Martín de Porres</a>
+                        </div>
+                        <div class="CLHip">
+                            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.807182911869!2d-77.03999222485922!3d-12.056783842087533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c6c76e03e5%3A0x3e12ff686b901453!2sReal%20Plaza%20Centro%20C%C3%ADvico!5e0!3m2!1ses-419!2spe!4v1714372772350!5m2!1ses-419!2spe"
+                                target="IFramePrin" onclick="showInfo(3)">Cercado de Lima</a>
+                        </div>
+                        <div class="CLHip">
+                            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.6594875126866!2d-77.04995592485898!3d-12.06693364227677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8e7a8555555%3A0x9c20cb5457697ebb!2sLa%20Rambla%20-%20Brasil!5e0!3m2!1ses-419!2spe!4v1714372886357!5m2!1ses-419!2spe"
+                                target="IFramePrin" onclick="showInfo(4)">Breña</a>
+                        </div>
+                        <div class="CLHip">
+                            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.503950506168!2d-77.08634212485867!3d-12.07761324247614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c970336b0725%3A0xae2a6f969b48786e!2sPlaza%20San%20Miguel!5e0!3m2!1ses-419!2spe!4v1714372983291!5m2!1ses-419!2spe"
+                                target="IFramePrin" onclick="showInfo(5)">San Miguel</a>
+                        </div>
+                        <div class="CLHip">
+                            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7802.7702800671195!2d-76.98394608900688!3d-12.08576483423171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c79f5dacafbf%3A0x2aecf92fd4325f0d!2sJockey%20Plaza!5e0!3m2!1ses-419!2spe!4v1714373161873!5m2!1ses-419!2spe"
+                                target="IFramePrin" onclick="showInfo(6)">Santiago de Surco</a>
+                        </div>
+                    </aside>
+                    <main>
+                        <div class="CLFrame">
+                            <iframe name="IFramePrin" id="mapa"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1951.7685443128837!2d-77.06652396446485!3d-11.937269739871875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d19a13fa473d%3A0xf854f91375b6055c!2sMallplaza%20Comas!5e0!3m2!1ses-419!2spe!4v1714372634792!5m2!1ses-419!2spe"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" border-radius="10px"></iframe>
+                        </div>
+                        <div id="info" class="info-sede"></div>
+                    </main>
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer container">
+
+        <img class="logo-2" src="images/logo.png" alt="" usemap="#mlogo">
+        <map name="mlogo">
+            <area alt="Logotipo" title="TicketExpress" shape="rect" coords="0,0,150,60" href="index.html">
+        </map>
+        <div class="links">
+            <h4>SOBRE TICKETEXPRESS</h4>
+            <ul>
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>TRABAJA CON NOSOTROS</h4>
+            <ul>
+                <li><a href="#">¿Tienes un evento?</a></li>
+                <li><a href="#">Venta empresas</a></li>
+                <li><a href="#">Módulo promotores</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>Atención al cliente</h4>
+            <ul>
+                <li><a href="#">Ver mi boleta electrónica</a></li>
+                <li><a href="#">Libro de Reclamaciones</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>Nuestras Redes</h4>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61558688744849">
+                    <div class="social">
+                        <img src="images/s1.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://x.com/TicketExpressPE?t=FArUkvPdEQj8dYOMpau5Pg&s=09">
+                    <div class="social">
+                        <img src="images/s2.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/ticketexpress_pe?igsh=NGMwaW9lYzRuaDdz">
+                    <div class="social">
+                        <img src="images/s3.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketExpress - Tu entrada al mundo del entretenimiento</title>
+    <link rel="icon" href="images/loguito.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-bar-content container">
+            <div class="content-info">
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    ticketexpress_pe@gmail.com
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="menu container">
+            <div class="top-row">
+                <div class="logo-container">
+                    <img class="logo-1" src="images/logo.png" alt="" usemap="#mlogo">
+                    <img class="logo-2" src="images/logo.png" alt="" usemap="#mlogo">
+                    <map name="mlogo">
+                        <area alt="Logotipo" title="TicketExpress" shape="rect" coords="0,0,150,60" href="index.html">
+                    </map>
+                </div>
+            </div>
+
+            <input type="checkbox" id="search-toggle" />
+            <label for="search-toggle">
+                <img src="images/lupa.png" class="search-icon" alt="Buscar"></label>
+            <div class="search-bar">
+                <form id="search-form" action="resultados_busqueda.php" method="GET">
+                    <select id="category-filter" name="category" class="search-filters">
+                        <option value="">Categoria</option>
+                        <option value="Liga 1">Liga 1</option>
+                        <option value="Eliminatorias">Eliminatorias</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Amistoso">Amistoso</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                    <select id="city-filter" name="city" class="search-filters">
+                        <option value="">Ciudad</option>
+                        <option value="lima">Lima</option>
+                        <option value="arequipa">Arequipa</option>
+                        <option value="cusco">Cusco</option>
+                    </select>
+                    <button class="btn-3" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const searchButton = document.getElementById("search-button");
+                    searchButton.addEventListener("click", function () {
+                        const category = document.getElementById("category-filter").value;
+                        const city = document.getElementById("city-filter").value;
+
+                        const queryParams = new URLSearchParams();
+                        if (category) queryParams.set("category", category);
+                        if (city) queryParams.set("city", city);
+
+                        const queryString = queryParams.toString();
+                        window.location.href = "resultados_busqueda.php?" + queryString;
+                    });
+                });
+            </script>
+
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="images/menu.png" class="menu-icono" alt="">" </label>
+            <nav class="navbar">
+                <div class="menu-1">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="redes sociales.html">Redes Sociales</a></li>
+                        <li><a href="mapas.html">Mapas</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="contacto.html">Mis entradas</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="inicio">
+        <div class="inicio-content container">
+            <div class="swiper mySwiper-1">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="slider">
+                            <div class="slider-txt">
+                                <h1>Vive la Pasión Crema</h1>
+                                <p>
+                                    Apoya a Universitario de Deportes en cada partido. Consigue tus entradas y sé
+                                    testigo de la emoción del fútbol peruano desde la primera fila.
+                                </p>
+                                <div class="botones">
+                                    <a href="#" class="btn-1">Leer más</a>
+                                </div>
+                            </div>
+                            <video width="640" height="385" controls>
+                                <source src="videos/SliderU.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slider">
+                            <div class="slider-txt">
+                                <h1>Tradición y Coraje Blanquiazul</h1>
+                                <p>
+                                    No te pierdas los partidos de Alianza Lima. Vive la emoción del fútbol con uno de
+                                    los equipos más emblemáticos de Perú. Reserva tu asiento hoy mismo.
+                                </p>
+                                <div class="botones">
+                                    <a href="#" class="btn-1">Leer más</a>
+                                </div>
+                            </div>
+                            <video width="640" height="385" controls>
+                                <source src="videos/SliderAl.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slider">
+                            <div class="slider-txt">
+                                <h1>Energía Celeste en Cada Jugada</h1>
+                                <p>
+                                    Acompaña a Sporting Cristal en su camino hacia la gloria. Vive la intensidad de los
+                                    partidos con uno de los equipos más queridos del país. Adquiere tus tickets ahora.
+                                </p>
+                                <div class="botones">
+                                    <a href="#" class="btn-1">Leer más</a>
+                                </div>
+                            </div>
+                            <video width="640" height="385" controls>
+                                <source src="videos/SliderCr.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slider">
+                            <div class="slider-txt">
+                                <h1>Pasión Edil en Cada Canchar</h1>
+                                <p>
+                                    Sigue los pasos del Club Deportivo Municipal y sé parte de su historia. Consigue tus
+                                    boletos y disfruta del fútbol con el equipo que representa a Lima con garra y
+                                    corazón.
+                                </p>
+                                <div class="botones">
+                                    <a href="#" class="btn-1">Leer más</a>
+                                </div>
+                            </div>
+                            <video width="640" height="385" controls>
+                                <source src="videos/SliderMu.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <main class="products">
+        <div class="tabs container">
+            <input type="radio" name="tabs" id="tab1" checked="checked" class="tabInput" value="1">
+            <label for="tab1">Equipos</label>
+            <div class="tab">
+                <div class="swiper mySwiper-2" id="swiper1">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="product">
+                                <div class="product-img">
+                                    <img src="images/U.png" alt="">
+                                </div>
+                                <div class="product-txt">
+                                    <h4>Universitario</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="product">
+                                <div class="product-img">                                    
+                                    <img src="images/alianza.png" alt="">
+                                </div>
+                                <div class="product-txt">
+                                    <h4>Alianza Lima</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product">
+                                <div class="product-img">                                    
+                                    <img src="images/cristal.png" alt="">
+                                </div>
+                                <div class="product-txt">
+                                    <h4>Sporting Cristal</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product">
+                                <div class="product-img">
+                                    <img src="images/cusco.png" alt="">
+                                </div>
+                                <div class="product-txt">
+                                    <h4>Cusco</h4>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product">
+                                <div class="product-img">
+                                    <img src="images/sullana.png" alt="">
+                                </div>
+                                <div class="product-txt">
+                                    <h4>Alianza Sullana</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product">
+                                <div class="product-img">
+                                    <img src="images/melgar.png" alt="">
+                                </div>
+                                <div class="product-txt">
+                                    <h4>FBC Melgar</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+            <input type="radio" name="tabs" id="tab2" checked="checked" class="tabInput" value="2">
+            <label for="tab2">Próximos Partidos</label>
+            <div class="tab">
+                <div class="swiper mySwiper-2" id="swiper2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="product">
+                                <div class="product-img">
+                                    <h4>Próximamente</h4>                                    
+                                </div>
+                                <div class="product-txt">
+                                    <h4>Atlético Grau vs UTC Cajamarca</h4>
+                                    <p>Jornada 13</p>
+                                    <span class="price">30/09</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product">
+                                <div class="product-img">
+                                    <h4>Próximamente</h4>                                    
+                                </div>
+                                <div class="product-txt">
+                                    <h4>Cusco vs Chankas CYC</h4>
+                                    <p>Jornada 14</p>
+                                    <span class="price">17/10</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product">
+                                <div class="product-img">
+                                    <h4>Próximamente</h4>                                    
+                                </div>
+                                <div class="product-txt">
+                                    <h4>Sport Boys vs Melgar</h4>
+                                    <p>Jornada 14</p>
+                                    <span class="price">18/10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </main>
+
+    <section class="info container">
+        <div class="info-img">
+            <img src="https://s3-us-west-2.amazonaws.com/joinnus.com/files/pasos-fpf-2.gif" alt="Pasos FPF">
+        </div>
+        <div class="info-txt">
+            <h2>¿Cómo editar, emitir e imprimir mi entrada?</h2>
+            <p>
+                Tus entradas siempre estarán en la web en la sección Mis entradas.
+            </p>
+            <a href="#" class="btn-2">Mas Información</a>
+        </div>
+    </section>
+
+    <footer class="footer container">
+
+        <img class="logo-2" src="images/logoblanco.png" alt="" usemap="#mlogo">
+        <map name="mlogo">
+            <area alt="Logotipo" title="TicketExpress" shape="rect" coords="0,0,150,60" href="index.html">
+        </map>
+        <div class="links">
+            <h4>SOBRE TICKETEXPRESS</h4>
+            <ul>
+                <li><a href="nosotros.html">Acerca de nosotros</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>Atención al cliente</h4>
+            <ul>
+                <li><a href="#">Libro de Reclamaciones</a></li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <h4>Nuestras Redes</h4>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61558688744849">
+                    <div class="social">
+                        <img src="images/s1.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://x.com/TicketExpressPE?t=FArUkvPdEQj8dYOMpau5Pg&s=09">
+                    <div class="social">
+                        <img src="images/s2.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/ticketexpress_pe?igsh=NGMwaW9lYzRuaDdz">
+                    <div class="social">
+                        <img src="images/s3.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu').addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById('search-toggle').checked = false;
+            }
+        });
+
+        document.getElementById('search-toggle').addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById('menu').checked = false;
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Selecciona todos los videos y los pausa
+            var videos = document.querySelectorAll('video');
+            videos.forEach(function(video) {
+                video.pause();
+            });
+        });
+    </script>
+</body>
+
+</html>
